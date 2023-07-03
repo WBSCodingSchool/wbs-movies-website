@@ -11,15 +11,15 @@ table {
   border-collapse: collapse;
   margin-bottom: 20px;
   background-color: #ffffff;
-  border-radius: 10px; /* Add border-radius to create rounded corners */
-  overflow: hidden; /* Hide any content that overflows the rounded corners */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th {
   background-color: #000000;
   color: #ffffff;
   font-weight: bold;
-  text-align: left;
+  text-align: center; /* Set text-align to center */
   padding: 10px;
 }
 
