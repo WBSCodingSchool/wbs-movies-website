@@ -1,0 +1,43 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 10px; /* Add border-radius to create rounded corners */
+  overflow: hidden; /* Hide any content that overflows the rounded corners */
+}
+
+th {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+td:nth-child(1) {
+  width: 50%;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+  width: 25%;
+  text-align: center;
+}
