@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const table = document.querySelector("table");
   const rows = table.querySelectorAll("tr");
-  const rowsPerPage = 10;
+  const headerRow = table.querySelector("tr:first-child"); // Select the header row
+  const rowsPerPage = 16;
   let currentPage = 1;
 
   function showPage(page) {
@@ -9,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const endIndex = startIndex + rowsPerPage;
 
     rows.forEach(function (row, index) {
+      if (index === 0) {
+        // Skip the header row
+        return;
+      }
+
       if (index >= startIndex && index < endIndex) {
         row.style.display = "table-row";
       } else {
@@ -18,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function createPagination() {
-    const totalPages = Math.ceil(rows.length / rowsPerPage);
-    const pagination = document.createElement("div");
+    const totalPages = Math.ceil((rows.length - 1) / rowsPerPage); // Exclude the header row
+    const pagination = document.createElement("footer");
     pagination.className = "pagination";
 
     for (let i = 1; i <= totalPages; i++) {
