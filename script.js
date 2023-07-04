@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const table = document.querySelector("table");
   const rows = table.querySelectorAll("tr");
   const headerRow = table.querySelector("tr:first-child"); // Select the header row
-  const rowsPerPage = 16;
+  const rowsPerPage = 15;
   let currentPage = 1;
 
   function showPage(page) {
-    const startIndex = (page - 1) * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
+    const startIndex = (page - 1) * rowsPerPage + 1; // +1 to skip header row
+    const endIndex = startIndex + rowsPerPage - 1; // -1 as startIndex now counts the header row
 
     rows.forEach(function (row, index) {
       if (index === 0) {
@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (index >= startIndex && index < endIndex) {
+      if (index >= startIndex && index <= endIndex) {
+        // <= endIndex as endIndex is now the actual last index
         row.style.display = "table-row";
       } else {
         row.style.display = "none";
